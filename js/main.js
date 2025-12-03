@@ -192,15 +192,39 @@ function handleContactFormSubmit(e) {
     // In a real application, send data to backend
     // For now, show success message
     console.log('Contact Form Data:', data);
+
+    document.getElementById("contact-Form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    service: document.getElementById("service").value,
+    message: document.getElementById("message").value
+  };
+
+  const res = await fetch("/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    alert("Message sent!");
+  } else {
+    alert("Something went wrong.");
+  }
+});
     
     showNotification('Thank you! We will contact you soon.', 'success');
     e.target.reset();
     
     // Optional: Redirect to WhatsApp for immediate contact
-    setTimeout(() => {
-        const message = encodeURIComponent(`Hi AquaHero! I'm ${data.name}. ${data.message}`);
-        window.open(`https://wa.me/6591273131?text=${message}`, '_blank');
-    }, 2000);
+    // setTimeout(() => {
+    //     const message = encodeURIComponent(`Hi AquaHero! I'm ${data.name}. ${data.message}`);
+    //     window.open(`https://wa.me/6591273131?text=${message}`, '_blank');
+    // }, 2000);
 }
 
 function handleBookingFormSubmit(e) {
@@ -392,29 +416,7 @@ function trackFormSubmission(formName) {
     // Add tracking here
 }
 
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    service: document.getElementById("service").value,
-    message: document.getElementById("message").value
-  };
-
-  const res = await fetch("/send-email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-
-  if (res.ok) {
-    alert("Message sent!");
-  } else {
-    alert("Something went wrong.");
-  }
-});
 
 // ===========================
 // Console Welcome Message
