@@ -193,7 +193,7 @@ function handleContactFormSubmit(e) {
     // For now, show success message
     console.log('Contact Form Data:', data);
 
-    document.getElementById("contact-Form").addEventListener("submit", async (e) => {
+    document.getElementById('contact-form').addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {
