@@ -178,7 +178,8 @@ function handleContactFormSubmit(e) {
     const data = Object.fromEntries(formData);
     
     // Basic validation
-    if (!data.name || !data.phone || !data.message) {
+    //if (!data.name || !data.phone || !data.message) {
+     if (!data.name || !data.message) {
         showNotification('Please fill in all required fields', 'error');
         return;
     }
@@ -195,7 +196,7 @@ function handleContactFormSubmit(e) {
 
 
     
-    showNotification('Thank you! We will contact you soon.', 'success');
+    showNotification('Thank you! Whatsapp me now with your message!.', 'success');
     e.target.reset();
     
     // Optional: Redirect to WhatsApp for immediate contact
