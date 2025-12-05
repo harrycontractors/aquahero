@@ -185,10 +185,10 @@ function handleContactFormSubmit(e) {
     }
     
     // Phone validation
-    if (!isValidPhone(data.phone)) {
-        showNotification('Please enter a valid phone number', 'error');
-        return;
-    }
+    // if (!isValidPhone(data.phone)) {
+    //     showNotification('Please enter a valid phone number', 'error');
+    //     return;
+    // }
     
     // In a real application, send data to backend
     // For now, show success message
@@ -213,20 +213,22 @@ function handleBookingFormSubmit(e) {
     const data = Object.fromEntries(formData);
     
     // Validation
-    if (!data.name || !data.phone || !data.address || !data.service || !data.message) {
+    //if (!data.name || !data.phone || !data.address || !data.service || !data.message) {
+    if (!data.name || !data.message) {
         showNotification('Please fill in all required fields', 'error');
         return;
     }
     
-    if (!isValidPhone(data.phone)) {
-        showNotification('Please enter a valid phone number', 'error');
-        return;
-    }
+    // if (!isValidPhone(data.phone)) {
+    //     showNotification('Please enter a valid phone number', 'error');
+    //     return;
+    // }
     
     // In a real application, send to backend
     console.log('Booking Form Data:', data);
     
-    showNotification('Booking request submitted successfully!', 'success');
+    // showNotification('Booking request submitted successfully!', 'success');
+    showNotification('Thank you! Whatsapp me now with your message!', 'success');
     e.target.reset();
     closeBookingModal();
     
