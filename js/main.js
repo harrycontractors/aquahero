@@ -201,7 +201,7 @@ function handleContactFormSubmit(e) {
     
     // Optional: Redirect to WhatsApp for immediate contact
     setTimeout(() => {
-        const message = encodeURIComponent(`Hi AquaHero! I'm ${data.name}. ${data.message}`);
+        const message = encodeURIComponent(`Hi AquaHero! I'm ${data.name}. \nService: ${data.service} \n${data.message}`);
         window.open(`https://wa.me/6591273131?text=${message}`, '_blank');
     }, 2000);
 }
