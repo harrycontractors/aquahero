@@ -196,7 +196,7 @@ function handleContactFormSubmit(e) {
 
 
     
-    showNotification('Thank you! Whatsapp me now with your message!.', 'success');
+    showNotification('Thank you! Whatsapp me with your message now!.', 'success');
     e.target.reset();
     
     // Optional: Redirect to WhatsApp for immediate contact
@@ -228,7 +228,7 @@ function handleBookingFormSubmit(e) {
     console.log('Booking Form Data:', data);
     
     // showNotification('Booking request submitted successfully!', 'success');
-    showNotification('Thank you! Whatsapp me now with your message!', 'success');
+    showNotification('Thank you! Whatsapp me with your message now!', 'success');
     e.target.reset();
     closeBookingModal();
     
