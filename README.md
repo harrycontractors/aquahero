@@ -168,7 +168,7 @@ Visit your website and test all features:
 Current contact details are already set:
 - Phone: `9127 3131`
 - Email: `Aquahero247@gmail.com`
-- Address: `131 Rangoon Road, Singapore 218409`
+- Address: `82 Lor 23 Geylang, #05-01, Singapore 388409`
 - WhatsApp: `91273131`
 - Domain: `www.aquahero-plumbing.sg`
 
